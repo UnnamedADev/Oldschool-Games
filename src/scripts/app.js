@@ -1,6 +1,7 @@
 import {loadData} from './modules/ajax_data.js';
+import {setScrolling} from './modules//scrolling.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('xd');
-    loadData('abc', 'dist/partials/first.html');
+    //loadData('abc', 'dist/partials/first.html');
+    setScrolling();
 });

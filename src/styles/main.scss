@@ -1,4 +1,123 @@
+//IMPORT
+@import 'variables.scss';
+@import 'templates.scss';
+
+//PROPS
 html, body {
     margin: 0;
     padding: 0;
+}
+* {
+    box-sizing: border-box;
+    @extend %custom-font;
+}
+a {
+    @extend %custom-font;
+}
+h1,h2,h3,h4,h5,h6,p {
+    @extend %title;
+}
+
+body {
+    background: url("./../images/background1-grayscale.png");
+    background-repeat: no-repeat;
+    background-position: fixed;
+    background-size: 100% 100%;
+    > * {
+        float: left;
+        width: 100%;
+    }
+    > nav {
+        position: fixed;
+        z-index: 300;
+        > ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            > li {
+                float: left;
+                color: $fair;
+                @extend %title;
+                font-size: 1.2em;
+                padding: 10px 20px;
+                &:hover {
+                    background: rgba($fair,0.12);
+                }
+            }
+        }
+    }
+    > header {
+        height: 100vh;
+        background: $fair;
+        position: relative;
+        > img {
+            float: left;
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+            top: 0; left: 0;
+            position: absolute;
+        }
+        > div {
+            z-index: 200;
+            @extend %vertical-center;
+            > h1 {
+                font-size: 2em;
+                text-align: center;
+                border: 3px solid $fair;
+                border-radius: 50px;
+                padding: 10px 50px;
+                color: $fair;
+            }
+        }
+    }
+    > section {
+        color: $fair;
+        > div {
+            float: left;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            > div {
+                text-align: center;
+                @extend %vertical-center;
+                > * {
+                    text-align: left;
+                }
+                > h1 {
+                    font-size: 3em;
+                }
+                > h2 {
+                    font-size: 2.3em;
+                }
+                > p {
+                    font-size: 1.3em;
+                }
+                > button {
+                    @extend %title;
+                    border: none;
+                    border-radius: 50px;
+                    padding: 10px 40px;
+                    font-size: 1.2em;
+                    color: $fair;
+                    background: $special;
+                    font-weight: normal;
+                }
+            }
+        }
+        > .fair {
+            background: $dark;
+        }
+        > .dark {
+            background:rgba($dark,0.9);
+        }
+    }
+    > footer {
+        background: rgba($fair, 0.95);
+        text-align: center;
+        padding: 40px 0px;
+        > h1, h2 {
+            color: $dark;
+        }
+    }
 }
